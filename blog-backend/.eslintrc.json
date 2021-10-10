@@ -1,0 +1,21 @@
+{
+    "env": {
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": ["eslint:recommended", "prettier"],
+    /* 교재에는 있으나 npx eslint --init 실행 시에 생성되지 않은 구문
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    */
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules": {
+        "no-unused-vars": "warn",
+        "no-console": "off"
+    }
+}

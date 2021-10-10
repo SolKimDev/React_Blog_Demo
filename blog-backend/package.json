@@ -1,0 +1,22 @@
+{
+  "name": "blog-backend",
+  "version": "0.1.0",
+  "description": "React Textbook Practice Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/SolKimDev/React_Blog_Demo"
+  },
+  "author": "Sol Kim",
+  "license": "MIT",
+  "dependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "koa": "^2.13.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
+}
