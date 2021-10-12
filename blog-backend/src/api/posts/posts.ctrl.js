@@ -12,7 +12,7 @@ const posts = [
 //Write a post
 //POST /api/posts
 //{title, body}
-exports.write = ctx => {
+export const write = ctx => {
     const { title, body } = ctx.request.body;
     postId += 1;
     const post = { id: postId, title, body };
@@ -22,13 +22,13 @@ exports.write = ctx => {
 
 //Inquire post list
 //GET /api/posts
-exports.list = ctx => {
+export const list = ctx => {
     ctx.body = posts;
 };
 
 //Inquire a post
 //GET /api/posts/:id
-exports.read = ctx => {
+export const read = ctx => {
     const { id } = ctx.params;
     const post = posts.find(p => p.id.toString() === id);
     if (!post) {
@@ -43,7 +43,7 @@ exports.read = ctx => {
 
 //Delete a post
 //DELETE /api/posts:id
-exports.remove = ctx => {
+export const remove = ctx => {
     const { id } = ctx.params;
     const index = posts.findIndex(p => p.id.toString() === id);
     if (index === -1) {
@@ -60,7 +60,7 @@ exports.remove = ctx => {
 //Replace a post
 //PUT /api/posts/:id
 //{title, body}
-exports.replace = ctx => {
+export const replace = ctx => {
     const { id } = ctx.params;
     const index = posts.findIndex(p => p.id.toString() === id );
     if(index === -1) {
@@ -80,7 +80,7 @@ exports.replace = ctx => {
 //Update a post
 //PATCH /api/posts/:id
 //{title, body}
-exports.update = ctx => {
+export const update = ctx => {
     const { id } = ctx.params;
     const index = posts.findIndex(p => p.id.toString() === id );
     if(index === -1) {
