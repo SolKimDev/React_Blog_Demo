@@ -1,0 +1,12 @@
+import Post from './models/post'
+
+export default function createTestData() {
+    const posts = [...Array(40).keys()].map(i=> ({
+        title: `post${i}`,
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec orci ligula, scelerisque sed elit eu, eleifend convallis quam. Suspendisse potenti. Maecenas et ipsum sem. Etiam vestibulum, mauris id bibendum feugiat, purus neque consectetur nibh, id bibendum nulla enim et mauris. Donec iaculis in orci id rhoncus. Pellentesque vestibulum dictum nisi, ut gravida enim ullamcorper at. Pellentesque suscipit porta dolor, non pharetra mi eleifend ut. Phasellus mattis ex nulla, non fermentum neque vulputate sollicitudin. Donec id elit feugiat, convallis odio et, efficitur ipsum. Maecenas elit eros, maximus at lectus sit amet, pharetra sollicitudin nulla. Vivamus tristique porta est accumsan molestie. Suspendisse ligula arcu, gravida ut vestibulum ut, facilisis ac turpis. Vivamus quis risus velit.\n\nProin finibus ornare mi et tristique. Curabitur eu pretium nibh. Fusce iaculis, metus in finibus blandit, mi ex commodo augue, eleifend dignissim ipsum libero vel urna. Mauris sit amet ullamcorper tortor, sit amet iaculis lectus. Pellentesque at nibh finibus, finibus est et, imperdiet lacus. Morbi porttitor quam quis est scelerisque, ut pulvinar augue luctus. Morbi non vestibulum quam. Nullam bibendum ex massa, eget molestie est cursus a. Sed odio ipsum, ultricies quis viverra in, dignissim vitae lectus. Aliquam a commodo urna.\n\nInteger quam enim, finibus vel metus at, tristique auctor nunc. Donec urna augue, viverra quis justo quis, blandit blandit ligula. Quisque mattis pretium nulla cursus eleifend. Donec orci tortor, egestas nec magna et, sollicitudin interdum sapien. Nulla facilisi. Pellentesque nulla est, condimentum tincidunt enim sed, malesuada commodo lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse velit ante, efficitur sed viverra a, posuere facilisis elit. Nunc id iaculis lectus. Pellentesque pulvinar turpis nec dolor posuere pellentesque. Praesent eu nulla iaculis, sagittis tortor ut, convallis est.',
+        tage: ['test','data'],
+    }));
+    Post.insertMany(posts, (err, docs) => {
+        console.log(docs);
+    });
+}
