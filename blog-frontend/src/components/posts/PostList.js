@@ -47,10 +47,12 @@ const PostItemBlock = styled.div`
 const PostItem = ({ post }) => {
     const { publishedDate, user, tags, title, body, _id } = post;
 
+    console.log('post : ' + JSON.stringify(post));
+    //console.log('user : ' + JSON.stringify(post._doc.user));
+
     return(
         <PostItemBlock>
-            <h2>제목</h2>
-            <Link to={`/@${user.username}/${_id}`}>{title}</Link>
+            <h2><Link to={`/@${user.username}/${_id}`}>{title}</Link></h2>
             <SubInfo username={user.username} publishedDate={new Date(publishedDate)} />
             <Tags tags={tags} />
             <p>{body}</p>
@@ -72,7 +74,7 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
                     </Button>
                 )}
             </WritePostButtonWrapper>
-            {/* 포스트 배열이 로딩중인 경우 */}
+            {/* 포스트 배열이 존재하고, 로딩 중이 아닌 경우 */}
             {!loading && posts && (
                 <div>
                     {posts.map(post => (
